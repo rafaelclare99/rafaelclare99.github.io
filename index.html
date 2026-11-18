@@ -3,8 +3,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfólio de Rafael Clare, desenvolvedor C# e .NET Júnior, especializado em ASP.NET MVC, APIs REST e SQL Server.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Portfólio de Rafael Clare, desenvolvedor C#/.NET Júnior, ASP.NET MVC, ASP.NET Core, APIs REST e SQL Server.">
+
   <title>Rafael Clare | Desenvolvedor C#/.NET</title>
 
   <style>
@@ -18,9 +21,13 @@
       --accent: #2563eb;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -30,41 +37,56 @@
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(1100px, 90%);
       margin: auto;
     }
 
+    /* MENU SUPERIOR - SEM LOGO */
     header {
       position: sticky;
       top: 0;
-      background: rgba(11,17,32,.96);
+      background: rgba(11, 17, 32, 0.96);
       border-bottom: 1px solid var(--border);
       z-index: 10;
+      backdrop-filter: blur(10px);
     }
 
     nav {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      justify-content: flex-end;
       padding: 18px 0;
     }
 
-    .logo { font-size: 24px; font-weight: 800; }
-    .logo span, .highlight { color: var(--blue); }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
 
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-size: 14px; }
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
 
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* APRESENTAÇÃO */
     .hero {
       padding: 110px 0 90px;
       background: radial-gradient(
-        ellipse at 80% 20%, #172b50 0%, transparent 55%
+        ellipse at 80% 20%,
+        #172b50 0%,
+        transparent 55%
       );
     }
 
@@ -81,9 +103,23 @@
       margin: 16px 0;
     }
 
-    .hero p { max-width: 650px; font-size: 18px; color: var(--muted); }
+    .highlight {
+      color: var(--blue);
+    }
 
-    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    /* BOTÕES */
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
 
     .btn {
       display: inline-block;
@@ -92,23 +128,47 @@
       background: var(--accent);
       color: white;
       font-weight: 600;
-      transition: .2s;
+      transition: 0.2s;
     }
 
-    .btn:hover { transform: translateY(-2px); background: #1d4ed8; }
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #1d4ed8;
+    }
 
     .btn.secondary {
       background: transparent;
       border: 1px solid var(--border);
     }
 
-    section { padding: 65px 0; scroll-margin-top: 85px; }
+    .btn.secondary:hover {
+      border-color: var(--blue);
+      background: #172b46;
+    }
 
-    h2 { font-size: 30px; margin: 0 0 16px; }
+    /* SEÇÕES */
+    section {
+      padding: 65px 0;
+      scroll-margin-top: 85px;
+    }
 
-    .section-desc { color: var(--muted); max-width: 700px; }
+    h2 {
+      font-size: 30px;
+      margin: 0 0 16px;
+    }
 
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .section-desc {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    /* TECNOLOGIAS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
 
     .skill {
       padding: 8px 14px;
@@ -119,6 +179,7 @@
       font-size: 14px;
     }
 
+    /* PROJETOS */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -131,7 +192,7 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 26px;
-      transition: .2s;
+      transition: 0.2s;
     }
 
     .card:hover {
@@ -139,8 +200,15 @@
       border-color: var(--blue);
     }
 
-    .card h3 { margin: 0 0 10px; font-size: 21px; }
-    .card p { color: var(--muted); font-size: 15px; }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
 
     .tag {
       display: inline-block;
@@ -156,26 +224,53 @@
       font-weight: 600;
     }
 
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* EXPERIÊNCIA PROFISSIONAL */
     .experience {
       border-left: 2px solid var(--accent);
       padding-left: 22px;
       margin-top: 28px;
     }
 
-    .experience h3 { margin-bottom: 4px; }
-    .experience small { color: var(--blue); }
-    .experience p { color: var(--muted); margin-top: 8px; }
+    .experience h3 {
+      margin-bottom: 4px;
+    }
 
+    .experience small {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .experience p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* CONTATO */
     .contact {
-      background: linear-gradient(135deg, #152d52, #111b30);
+      background: linear-gradient(
+        135deg,
+        #152d52,
+        #111b30
+      );
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 45px;
       text-align: center;
     }
 
-    .contact p { color: var(--muted); }
+    .contact p {
+      color: var(--muted);
+    }
 
+    .contact .buttons {
+      justify-content: center;
+    }
+
+    /* RODAPÉ */
     footer {
       text-align: center;
       padding: 30px;
@@ -184,22 +279,39 @@
       font-size: 13px;
     }
 
+    /* RESPONSIVIDADE */
     @media (max-width: 700px) {
-      .hero { padding: 75px 0; }
-      .grid { grid-template-columns: 1fr; }
-      nav { justify-content: center; }
-      .nav-links { justify-content: center; gap: 15px; }
-      .contact { padding: 28px 18px; }
+      .hero {
+        padding: 75px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .contact {
+        padding: 28px 18px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- MENU SEM LOGOTIPO -->
   <header>
     <nav class="container">
-      <a class="logo" href="#inicio">RC<span>.dev</span></a>
       <div class="nav-links">
+        <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#experiencia">Experiência</a>
@@ -209,48 +321,80 @@
   </header>
 
   <main>
+
+    <!-- APRESENTAÇÃO -->
     <div class="hero" id="inicio">
       <div class="container">
-        <div class="eyebrow">DESENVOLVEDOR C# / .NET JÚNIOR</div>
 
-        <h1>Olá, eu sou<br><span class="highlight">Rafael Clare.</span></h1>
+        <div class="eyebrow">
+          DESENVOLVEDOR C# / .NET JÚNIOR
+        </div>
+
+        <h1>
+          Olá, eu sou<br>
+          <span class="highlight">Rafael Clare.</span>
+        </h1>
 
         <p>
-          Desenvolvedor de software com experiência em C#,
-          ASP.NET MVC, ASP.NET Core, APIs REST e bancos de dados.
-          Gosto de construir aplicações web e soluções que
-          resolvem problemas reais.
+          Desenvolvedor de software com experiência em
+          C#, ASP.NET MVC, ASP.NET Core, APIs REST e
+          bancos de dados relacionais.
+
+          Tenho interesse em desenvolvimento backend,
+          arquitetura MVC e construção de aplicações
+          web que resolvem problemas reais.
         </p>
 
         <div class="buttons">
-          <a class="btn" href="#projetos">Conhecer projetos</a>
+
+          <a class="btn" href="#projetos">
+            Conhecer projetos
+          </a>
+
           <a class="btn secondary"
              href="https://github.com/rafaelclare99"
-             target="_blank" rel="noopener noreferrer">
+             target="_blank"
+             rel="noopener noreferrer">
             GitHub
           </a>
+
           <a class="btn secondary"
              href="https://www.linkedin.com/in/rafael-clare/"
-             target="_blank" rel="noopener noreferrer">
+             target="_blank"
+             rel="noopener noreferrer">
             LinkedIn
           </a>
+
         </div>
+
       </div>
     </div>
 
+    <!-- SOBRE MIM -->
     <section id="sobre">
       <div class="container">
+
         <h2>Sobre mim</h2>
+
         <p class="section-desc">
-          Sou bacharel em Sistemas de Informação, com experiência
-          no desenvolvimento e manutenção de aplicações corporativas.
-          Já trabalhei com C#, ASP.NET MVC, integração de APIs,
-          consultas SQL e correção de falhas em sistemas.
-          Atualmente continuo evoluindo minhas habilidades em
-          desenvolvimento backend e arquitetura de aplicações web.
+          Sou bacharel em Sistemas de Informação e
+          desenvolvedor de software, com experiência
+          no desenvolvimento e manutenção de
+          aplicações web e sistemas corporativos.
+
+          Durante minha trajetória profissional,
+          atuei com C#, ASP.NET MVC, APIs REST,
+          integração de sistemas, bancos de dados,
+          análise de problemas e implementação
+          de melhorias.
+
+          Busco evoluir constantemente minhas
+          habilidades em .NET, arquitetura MVC,
+          backend e boas práticas de desenvolvimento.
         </p>
 
         <h3>Tecnologias</h3>
+
         <div class="skills">
           <span class="skill">C#</span>
           <span class="skill">.NET</span>
@@ -259,161 +403,318 @@
           <span class="skill">Entity Framework Core</span>
           <span class="skill">SQL Server</span>
           <span class="skill">APIs REST</span>
-          <span class="skill">Git / GitHub</span>
+          <span class="skill">Git</span>
+          <span class="skill">GitHub</span>
           <span class="skill">JavaScript</span>
           <span class="skill">React</span>
           <span class="skill">TypeScript</span>
+          <span class="skill">PostgreSQL</span>
           <span class="skill">Docker</span>
         </div>
+
       </div>
     </section>
 
+    <!-- PROJETOS -->
     <section id="projetos">
       <div class="container">
+
         <h2>Projetos em destaque</h2>
+
         <p class="section-desc">
-          Alguns dos sistemas e aplicações que desenvolvo
-          para aprimorar minhas habilidades.
+          Conheça alguns projetos que desenvolvo
+          para aplicar meus conhecimentos e
+          aprimorar minhas habilidades técnicas.
         </p>
 
         <div class="grid">
+
+          <!-- FASTFOOD -->
           <article class="card">
             <h3>FastFood — Sistema MVC</h3>
+
             <p>
-              Projeto de estudo utilizando ASP.NET Core MVC,
-              Entity Framework Core e SQL Server, com
-              operações de cadastro e persistência de dados.
+              Projeto de estudo desenvolvido utilizando
+              ASP.NET Core MVC, Entity Framework Core
+              e SQL Server.
+
+              Implementação de funcionalidades de
+              cadastro e persistência de dados,
+              seguindo a arquitetura MVC.
             </p>
+
             <div>
               <span class="tag">C#</span>
               <span class="tag">ASP.NET MVC</span>
               <span class="tag">SQL Server</span>
+              <span class="tag">Entity Framework</span>
             </div>
+
           </article>
 
+          <!-- FINANÇAS -->
           <article class="card">
             <h3>Sistema de Finanças</h3>
+
             <p>
-              Aplicação de estudo com ASP.NET Core MVC,
-              banco de dados relacional e operações de
-              gerenciamento de registros.
+              Aplicação web desenvolvida como projeto
+              de estudo utilizando ASP.NET Core MVC.
+
+              Foco na organização de código,
+              persistência de informações e
+              integração com banco de dados relacional.
             </p>
+
             <div>
               <span class="tag">.NET</span>
+              <span class="tag">ASP.NET Core MVC</span>
               <span class="tag">Entity Framework</span>
               <span class="tag">SQL</span>
             </div>
+
           </article>
 
+          <!-- SAAS -->
           <article class="card">
             <h3>Plataforma SaaS Web</h3>
+
             <p>
-              Projeto em desenvolvimento com backend ASP.NET Core,
-              React, PostgreSQL e Docker. Inclui testes locais
-              de fluxos de assinatura e pagamento.
+              Aplicação SaaS em desenvolvimento,
+              com backend em ASP.NET Core,
+              frontend em React e TypeScript,
+              PostgreSQL e Docker.
+
+              Inclui implementação e testes
+              locais de fluxos de assinatura
+              e pagamento com Mercado Pago.
             </p>
+
             <div>
               <span class="tag">ASP.NET Core</span>
               <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
               <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
             </div>
+
           </article>
 
+          <!-- API IXC -->
           <article class="card">
             <h3>API-IXC</h3>
+
             <p>
-              Projeto de integração de sistemas através de API,
-              com foco na comunicação entre serviços e
-              automação de processos.
+              Projeto voltado à integração de
+              sistemas e comunicação entre serviços,
+              com foco na automação de processos
+              e organização de funcionalidades.
             </p>
+
             <div>
-              <span class="tag">API</span>
+              <span class="tag">APIs</span>
               <span class="tag">Integrações</span>
+              <span class="tag">Automação</span>
             </div>
+
             <a class="project-link"
                href="https://github.com/rafaelclare99/API-IXC"
-               target="_blank" rel="noopener noreferrer">
+               target="_blank"
+               rel="noopener noreferrer">
               Ver código no GitHub &rarr;
             </a>
+
           </article>
+
         </div>
 
         <p style="margin-top: 25px;">
           <a class="project-link"
              href="https://github.com/rafaelclare99"
-             target="_blank" rel="noopener noreferrer">
-            Ver meu perfil e repositórios no GitHub &rarr;
+             target="_blank"
+             rel="noopener noreferrer">
+            Ver todos os repositórios no GitHub &rarr;
           </a>
         </p>
+
       </div>
     </section>
 
+    <!-- EXPERIÊNCIA PROFISSIONAL -->
     <section id="experiencia">
       <div class="container">
+
         <h2>Experiência profissional</h2>
 
+        <!-- CETEC -->
         <div class="experience">
-          <h3>Desenvolvedor de Software — CETEC Engenharia</h3>
+
+          <h3>
+            Desenvolvedor de Software — CETEC Engenharia
+          </h3>
+
           <small>2026 — Atual</small>
+
           <p>
-            Desenvolvimento e manutenção de sistemas corporativos,
-            implementação de funcionalidades, integrações
-            e melhorias utilizando Django REST Framework,
-            React e TypeScript.
+            Desenvolvimento e manutenção do Nexus,
+            sistema corporativo utilizando Django
+            REST Framework, React e TypeScript.
+
+            Implementação de funcionalidades,
+            integrações, melhorias e correções
+            de problemas, seguindo a arquitetura
+            existente.
           </p>
+
         </div>
 
+        <!-- I2TECH -->
         <div class="experience">
-          <h3>Estagiário de Desenvolvimento — I2Tech</h3>
-          <small>12 meses de experiência</small>
+
+          <h3>
+            Estagiário de Desenvolvimento — I2Tech
+          </h3>
+
+          <small>12 meses</small>
+
           <p>
-            Desenvolvimento e manutenção de aplicações em C#
-            e ASP.NET MVC, implementação de APIs REST,
-            integração com bancos relacionais, testes e
-            correção de bugs.
+            Desenvolvimento e manutenção de
+            aplicações utilizando C# e ASP.NET MVC.
+
+            Implementação e evolução de APIs REST,
+            integração com bancos de dados,
+            consultas SQL, testes, depuração
+            e correção de bugs.
           </p>
+
         </div>
 
+        <!-- VNT DESENVOLVIMENTO -->
         <div class="experience">
-          <h3>Analista de Redes — VNT Telecom</h3>
-          <small>46 meses de experiência</small>
+
+          <h3>
+            Desenvolvedor de Software — VNT Telecom
+          </h3>
+
+          <small>12 meses</small>
+
           <p>
-            Monitoramento de infraestrutura, suporte técnico,
-            diagnóstico e resolução de incidentes.
+            Participação no desenvolvimento
+            e manutenção de sistemas internos
+            e soluções web da empresa.
+
+            Atuação na implementação de melhorias,
+            ajustes de funcionalidades e correção
+            de falhas em aplicações corporativas.
           </p>
+
         </div>
+
+        <!-- VNT REDES -->
+        <div class="experience">
+
+          <h3>
+            Analista de Redes — VNT Telecom
+          </h3>
+
+          <small>34 meses</small>
+
+          <p>
+            Monitoramento de infraestrutura
+            de redes, suporte técnico,
+            diagnóstico de falhas e
+            resolução de incidentes.
+
+            Acompanhamento da disponibilidade
+            dos serviços e análise de
+            problemas de conectividade.
+          </p>
+
+        </div>
+
       </div>
     </section>
 
+    <!-- FORMAÇÃO -->
+    <section id="formacao">
+      <div class="container">
+
+        <h2>Formação acadêmica</h2>
+
+        <div class="experience">
+
+          <h3>
+            Bacharelado em Sistemas de Informação
+          </h3>
+
+          <small>Graduação concluída</small>
+
+          <p>
+            Formação superior na área de
+            Tecnologia da Informação, com
+            conhecimentos em desenvolvimento
+            de software, bancos de dados,
+            infraestrutura e sistemas.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTATO -->
     <section id="contato">
       <div class="container">
+
         <div class="contact">
+
           <h2>Vamos conversar?</h2>
+
           <p>
-            Estou interessado em oportunidades de desenvolvimento
-            C#/.NET Júnior, especialmente backend e aplicações web.
+            Estou interessado em oportunidades
+            de desenvolvimento C#/.NET Júnior,
+            especialmente em backend,
+            ASP.NET MVC e aplicações web.
+
+            Entre em contato para conversar
+            sobre projetos e oportunidades.
           </p>
-          <div class="buttons" style="justify-content:center;">
+
+          <div class="buttons">
+
             <a class="btn"
                href="mailto:rafael.clare@hotmail.com">
               Enviar e-mail
             </a>
+
             <a class="btn secondary"
                href="https://www.linkedin.com/in/rafael-clare/"
-               target="_blank" rel="noopener noreferrer">
+               target="_blank"
+               rel="noopener noreferrer">
               Meu LinkedIn
             </a>
+
+            <a class="btn secondary"
+               href="https://github.com/rafaelclare99"
+               target="_blank"
+               rel="noopener noreferrer">
+              Meu GitHub
+            </a>
+
           </div>
+
         </div>
+
       </div>
     </section>
+
   </main>
 
+  <!-- RODAPÉ -->
   <footer>
-    &copy; <span id="ano"></span> Rafael Clare.
-    Desenvolvido com HTML, CSS e JavaScript.
+    &copy; <span id="ano"></span> Rafael Clare.    
   </footer>
 
+  <!-- JAVASCRIPT -->
   <script>
     document.getElementById("ano").textContent =
       new Date().getFullYear();
