@@ -6,11 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="Portfólio de Rafael Clare, desenvolvedor C#/.NET Júnior, ASP.NET MVC, ASP.NET Core, APIs REST e SQL Server.">
+        content="Portfólio de Rafael Clare, Desenvolvedor C#/.NET Júnior, ASP.NET MVC, ASP.NET Core, APIs REST e SQL Server.">
 
   <title>Rafael Clare | Desenvolvedor C#/.NET</title>
+
+  <!-- FAVICON DE DESENVOLVEDOR -->
   <link rel="icon" type="image/svg+xml"
-  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1120'/%3E%3Cpath d='M24 20L12 32l12 12M40 20l12 12-12 12M36 16L28 48' fill='none' stroke='%2360a5fa' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1120'/%3E%3Cpath d='M24 20L12 32l12 12M40 20l12 12-12 12M36 16L28 48' fill='none' stroke='%2360a5fa' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- ÍCONES DAS TECNOLOGIAS -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
   <style>
     :root {
@@ -49,32 +55,36 @@
       margin: auto;
     }
 
-    /* MENU SUPERIOR - SEM LOGO */
+    /* MENU SUPERIOR CENTRALIZADO */
+
     header {
       position: sticky;
       top: 0;
       background: rgba(11, 17, 32, 0.96);
       border-bottom: 1px solid var(--border);
-      z-index: 10;
+      z-index: 100;
       backdrop-filter: blur(10px);
     }
 
     nav {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       padding: 18px 0;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 26px;
     }
 
     .nav-links a {
       color: var(--muted);
       font-size: 14px;
+      font-weight: 500;
       transition: color 0.2s;
     }
 
@@ -83,6 +93,7 @@
     }
 
     /* APRESENTAÇÃO */
+
     .hero {
       padding: 110px 0 90px;
       background: radial-gradient(
@@ -116,6 +127,7 @@
     }
 
     /* BOTÕES */
+
     .buttons {
       display: flex;
       flex-wrap: wrap;
@@ -149,6 +161,7 @@
     }
 
     /* SEÇÕES */
+
     section {
       padding: 65px 0;
       scroll-margin-top: 85px;
@@ -164,24 +177,8 @@
       max-width: 700px;
     }
 
-    /* TECNOLOGIAS */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .skill {
-      padding: 8px 14px;
-      border-radius: 7px;
-      background: #172b46;
-      color: #bfdbfe;
-      border: 1px solid #27466c;
-      font-size: 14px;
-    }
-
     /* PROJETOS */
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -230,7 +227,8 @@
       text-decoration: underline;
     }
 
-    /* EXPERIÊNCIA PROFISSIONAL */
+    /* EXPERIÊNCIAS */
+
     .experience {
       border-left: 2px solid var(--accent);
       padding-left: 22px;
@@ -251,7 +249,69 @@
       margin-top: 8px;
     }
 
+    /* NOVA ÁREA DE TECNOLOGIAS */
+
+    .technologies {
+      margin-top: 60px;
+    }
+
+    .technologies h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .technologies-description {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .tech-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      transition: 0.25s ease;
+      min-height: 125px;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue);
+      background: #1b2a42;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+    }
+
+    .tech-card i {
+      font-size: 43px;
+      line-height: 1;
+    }
+
+    .tech-card span {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* COR ESPECIAL PARA ÍCONES ESCUROS */
+
+    .tech-card .github-icon {
+      color: #f1f5f9;
+    }
+
     /* CONTATO */
+
     .contact {
       background: linear-gradient(
         135deg,
@@ -273,6 +333,7 @@
     }
 
     /* RODAPÉ */
+
     footer {
       text-align: center;
       padding: 30px;
@@ -282,6 +343,13 @@
     }
 
     /* RESPONSIVIDADE */
+
+    @media (max-width: 900px) {
+      .tech-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 700px) {
       .hero {
         padding: 75px 0;
@@ -297,7 +365,20 @@
 
       .nav-links {
         justify-content: center;
-        gap: 15px;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .tech-card {
+        padding: 20px 10px;
       }
 
       .contact {
@@ -309,7 +390,7 @@
 
 <body>
 
-  <!-- MENU SEM LOGOTIPO -->
+  <!-- MENU CENTRALIZADO -->
   <header>
     <nav class="container">
       <div class="nav-links">
@@ -317,6 +398,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#experiencia">Experiência</a>
+        <a href="#formacao">Formação</a>
         <a href="#contato">Contato</a>
       </div>
     </nav>
@@ -339,12 +421,11 @@
 
         <p>
           Desenvolvedor de software com experiência em
-          C#, ASP.NET MVC, ASP.NET Core, APIs REST e
-          bancos de dados relacionais.
-
+          C#, ASP.NET MVC, ASP.NET Core, APIs REST
+          e bancos de dados relacionais.
           Tenho interesse em desenvolvimento backend,
-          arquitetura MVC e construção de aplicações
-          web que resolvem problemas reais.
+          arquitetura MVC e construção de aplicações web
+          que resolvem problemas reais.
         </p>
 
         <div class="buttons">
@@ -368,7 +449,6 @@
           </a>
 
         </div>
-
       </div>
     </div>
 
@@ -383,36 +463,21 @@
           desenvolvedor de software, com experiência
           no desenvolvimento e manutenção de
           aplicações web e sistemas corporativos.
+        </p>
 
+        <p class="section-desc">
           Durante minha trajetória profissional,
           atuei com C#, ASP.NET MVC, APIs REST,
           integração de sistemas, bancos de dados,
           análise de problemas e implementação
           de melhorias.
+        </p>
 
+        <p class="section-desc">
           Busco evoluir constantemente minhas
           habilidades em .NET, arquitetura MVC,
           backend e boas práticas de desenvolvimento.
         </p>
-
-        <h3>Tecnologias</h3>
-
-        <div class="skills">
-          <span class="skill">C#</span>
-          <span class="skill">.NET</span>
-          <span class="skill">ASP.NET MVC</span>
-          <span class="skill">ASP.NET Core</span>
-          <span class="skill">Entity Framework Core</span>
-          <span class="skill">SQL Server</span>
-          <span class="skill">APIs REST</span>
-          <span class="skill">Git</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">React</span>
-          <span class="skill">TypeScript</span>
-          <span class="skill">PostgreSQL</span>
-          <span class="skill">Docker</span>
-        </div>
 
       </div>
     </section>
@@ -439,7 +504,9 @@
               Projeto de estudo desenvolvido utilizando
               ASP.NET Core MVC, Entity Framework Core
               e SQL Server.
+            </p>
 
+            <p>
               Implementação de funcionalidades de
               cadastro e persistência de dados,
               seguindo a arquitetura MVC.
@@ -451,7 +518,6 @@
               <span class="tag">SQL Server</span>
               <span class="tag">Entity Framework</span>
             </div>
-
           </article>
 
           <!-- FINANÇAS -->
@@ -461,10 +527,12 @@
             <p>
               Aplicação web desenvolvida como projeto
               de estudo utilizando ASP.NET Core MVC.
+            </p>
 
+            <p>
               Foco na organização de código,
-              persistência de informações e
-              integração com banco de dados relacional.
+              persistência de informações e integração
+              com banco de dados relacional.
             </p>
 
             <div>
@@ -473,7 +541,6 @@
               <span class="tag">Entity Framework</span>
               <span class="tag">SQL</span>
             </div>
-
           </article>
 
           <!-- SAAS -->
@@ -485,10 +552,12 @@
               com backend em ASP.NET Core,
               frontend em React e TypeScript,
               PostgreSQL e Docker.
+            </p>
 
-              Inclui implementação e testes
-              locais de fluxos de assinatura
-              e pagamento com Mercado Pago.
+            <p>
+              Inclui implementação e testes locais
+              de fluxos de assinatura e pagamento
+              com Mercado Pago.
             </p>
 
             <div>
@@ -498,7 +567,6 @@
               <span class="tag">PostgreSQL</span>
               <span class="tag">Docker</span>
             </div>
-
           </article>
 
           <!-- API IXC -->
@@ -506,8 +574,8 @@
             <h3>API-IXC</h3>
 
             <p>
-              Projeto voltado à integração de
-              sistemas e comunicação entre serviços,
+              Projeto voltado à integração de sistemas
+              e comunicação entre serviços,
               com foco na automação de processos
               e organização de funcionalidades.
             </p>
@@ -518,13 +586,17 @@
               <span class="tag">Automação</span>
             </div>
 
-           
-
+            <a class="project-link"
+               href="https://github.com/rafaelclare99/API-IXC"
+               target="_blank"
+               rel="noopener noreferrer">
+              Ver código no GitHub &rarr;
+            </a>
           </article>
 
         </div>
 
-        <p style="margin-top: 25px;">
+        <p style="margin-top:25px;">
           <a class="project-link"
              href="https://github.com/rafaelclare99"
              target="_blank"
@@ -544,10 +616,7 @@
 
         <!-- CETEC -->
         <div class="experience">
-
-          <h3>
-            Desenvolvedor de Software — CETEC Engenharia
-          </h3>
+          <h3>Desenvolvedor de Software — CETEC Engenharia</h3>
 
           <small>2026 — Atual</small>
 
@@ -561,15 +630,11 @@
             de problemas, seguindo a arquitetura
             existente.
           </p>
-
         </div>
 
         <!-- I2TECH -->
         <div class="experience">
-
-          <h3>
-            Estagiário de Desenvolvimento — I2Tech
-          </h3>
+          <h3>Estagiário de Desenvolvimento — I2Tech</h3>
 
           <small>12 meses</small>
 
@@ -582,15 +647,11 @@
             consultas SQL, testes, depuração
             e correção de bugs.
           </p>
-
         </div>
 
         <!-- VNT DESENVOLVIMENTO -->
         <div class="experience">
-
-          <h3>
-            Desenvolvedor de Software — VNT Telecom
-          </h3>
+          <h3>Desenvolvedor de Software — VNT Telecom</h3>
 
           <small>12 meses</small>
 
@@ -603,15 +664,11 @@
             ajustes de funcionalidades e correção
             de falhas em aplicações corporativas.
           </p>
-
         </div>
 
         <!-- VNT REDES -->
         <div class="experience">
-
-          <h3>
-            Analista de Redes — VNT Telecom
-          </h3>
+          <h3>Analista de Redes — VNT Telecom</h3>
 
           <small>34 meses</small>
 
@@ -625,23 +682,19 @@
             dos serviços e análise de
             problemas de conectividade.
           </p>
-
         </div>
 
       </div>
     </section>
 
-    <!-- FORMAÇÃO -->
+    <!-- FORMAÇÃO ACADÊMICA -->
     <section id="formacao">
       <div class="container">
 
         <h2>Formação acadêmica</h2>
 
         <div class="experience">
-
-          <h3>
-            Bacharelado em Sistemas de Informação
-          </h3>
+          <h3>Bacharelado em Sistemas de Informação</h3>
 
           <small>Graduação concluída</small>
 
@@ -652,7 +705,126 @@
             de software, bancos de dados,
             infraestrutura e sistemas.
           </p>
+        </div>
 
+        <!-- TECNOLOGIAS ABAIXO DA FORMAÇÃO -->
+        <div class="technologies">
+
+          <h3>Tecnologias</h3>
+
+          <p class="technologies-description">
+            Principais tecnologias e ferramentas
+            utilizadas em meus projetos e estudos.
+          </p>
+
+          <div class="tech-grid">
+
+            <!-- C# -->
+            <div class="tech-card">
+              <i class="devicon-csharp-plain colored"
+                 aria-hidden="true"></i>
+              <span>C#</span>
+            </div>
+
+            <!-- .NET -->
+            <div class="tech-card">
+              <i class="devicon-dotnetcore-plain colored"
+                 aria-hidden="true"></i>
+              <span>.NET / ASP.NET Core</span>
+            </div>
+
+            <!-- SQL SERVER -->
+            <div class="tech-card">
+              <i class="devicon-microsoftsqlserver-plain colored"
+                 aria-hidden="true"></i>
+              <span>SQL Server</span>
+            </div>
+
+            <!-- REACT -->
+            <div class="tech-card">
+              <i class="devicon-react-original colored"
+                 aria-hidden="true"></i>
+              <span>React</span>
+            </div>
+
+            <!-- TYPESCRIPT -->
+            <div class="tech-card">
+              <i class="devicon-typescript-plain colored"
+                 aria-hidden="true"></i>
+              <span>TypeScript</span>
+            </div>
+
+            <!-- JAVASCRIPT -->
+            <div class="tech-card">
+              <i class="devicon-javascript-plain colored"
+                 aria-hidden="true"></i>
+              <span>JavaScript</span>
+            </div>
+
+            <!-- HTML5 -->
+            <div class="tech-card">
+              <i class="devicon-html5-plain colored"
+                 aria-hidden="true"></i>
+              <span>HTML5</span>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="tech-card">
+              <i class="devicon-css3-plain colored"
+                 aria-hidden="true"></i>
+              <span>CSS3</span>
+            </div>
+
+            <!-- POSTGRESQL -->
+            <div class="tech-card">
+              <i class="devicon-postgresql-plain colored"
+                 aria-hidden="true"></i>
+              <span>PostgreSQL</span>
+            </div>
+
+            <!-- DOCKER -->
+            <div class="tech-card">
+              <i class="devicon-docker-plain colored"
+                 aria-hidden="true"></i>
+              <span>Docker</span>
+            </div>
+
+            <!-- GIT -->
+            <div class="tech-card">
+              <i class="devicon-git-plain colored"
+                 aria-hidden="true"></i>
+              <span>Git</span>
+            </div>
+
+            <!-- GITHUB -->
+            <div class="tech-card">
+              <i class="devicon-github-original github-icon"
+                 aria-hidden="true"></i>
+              <span>GitHub</span>
+            </div>
+
+            <!-- PYTHON -->
+            <div class="tech-card">
+              <i class="devicon-python-plain colored"
+                 aria-hidden="true"></i>
+              <span>Python</span>
+            </div>
+
+            <!-- MYSQL -->
+            <div class="tech-card">
+              <i class="devicon-mysql-original colored"
+                 aria-hidden="true"></i>
+              <span>MySQL</span>
+            </div>
+
+            <!-- NODE.JS -->
+            <div class="tech-card">
+              <i class="devicon-nodejs-plain colored"
+                 aria-hidden="true"></i>
+              <span>Node.js</span>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -663,7 +835,6 @@
       <div class="container">
 
         <div class="contact">
-
           <h2>Vamos conversar?</h2>
 
           <p>
@@ -698,7 +869,6 @@
             </a>
 
           </div>
-
         </div>
 
       </div>
@@ -708,10 +878,9 @@
 
   <!-- RODAPÉ -->
   <footer>
-    &copy; <span id="ano"></span> Rafael Clare.    
+    &copy; <span id="ano"></span> Rafael Clare.
   </footer>
 
-  <!-- JAVASCRIPT -->
   <script>
     document.getElementById("ano").textContent =
       new Date().getFullYear();
